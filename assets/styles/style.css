@@ -1,0 +1,120 @@
+*{
+    font-family: Montserrat;
+}
+header{
+    height: 165px;
+    max-height: 165px;
+    background-color: #FFC107;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.div_header{
+    width: 1440px;
+}
+
+#amarela{
+    height: 117px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.250) 0px 4px 4px;
+    z-index: 0;
+}
+
+#laranja{
+    height: 48px;
+}
+
+.logo{
+    width: 324px;
+    height: 84px;
+}
+
+nav{
+    height: 48px;
+    background: #FFA000;
+    color: #FDFDFD;
+    display: flex;
+    justify-content: center;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+main{
+    margin: 107px 0px;
+}
+
+#principal {
+    width: 560px;
+}
+
+#tags li{
+    color: #176902;
+    border: 1px solid #176902;
+    height: 31px;
+    width: 95px;
+    border-radius: 47px;
+    font-size: 18px;
+    padding: 7px 22px;
+}
+
+#Receitas_relacionadas{
+    width: 345px;
+}
+
+#Receitas_relacionadas div {
+    height: 411px;
+    border-bottom: 1px;
+    box-shadow: rgba(0, 0, 0, 0.250) 0px 4px 4px;
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+#Receitas_relacionadas img {
+    height: 342px;
+}
+
+li{
+    list-style: none;
+    display: inline;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0px 29px;
+}
+
+ol li{
+    display: list-item;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0px;
+}
+
+#ingredientes{
+    margin-bottom: 0px;
+}
+
+#modo_preparo{
+    font-size: 20px;
+}
+
+h1, h2{
+    color: #FFA000;
+}
+
+footer{
+    background: #FFC107 url('../img/logo.png') 0 50% no-repeat;
+    padding: 51px 0 46px 368px;
+}
+
+footer p{
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
