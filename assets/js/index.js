@@ -39,7 +39,7 @@ const cadastrarReceita = (
     console.log(`Cadastro da receita ${titulo} feito com sucesso!`);
 };
 
-console.log(listaDeReceitas);
+//console.log(listaDeReceitas);
 
 cadastrarReceita(
     2,
@@ -51,4 +51,27 @@ cadastrarReceita(
     false,
 );
 
-console.log(listaDeReceitas);
+//console.log(listaDeReceitas);
+
+const exibirReceitas = (listaDeReceitas) => {
+    let resultado =[];
+    for( let i = 0; i<listaDeReceitas.length; i++){
+        resultado.push(`Titulo: ${listaDeReceitas[i].titulo} , Ingredientes: ${listaDeReceitas[i].ingredientes} , Vegano: ${listaDeReceitas[i].vegano} `);
+    }
+    return resultado.join("\n");
+};
+
+console.log(exibirReceitas(listaDeReceitas));
+
+const deletarReceita = (id) =>{
+    if(!listaDeReceitas[id]){
+        console.log("Receita não encontrada");
+    } else{
+    listaDeReceitas.splice(id, 1);
+    console.log(`Item ${id} removido com sucesso!`);
+    }
+};
+
+deletarReceita(0);
+
+console.log(exibirReceitas(listaDeReceitas));
