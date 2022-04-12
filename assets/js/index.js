@@ -53,7 +53,7 @@ cadastrarReceita(
 
 //console.log(listaDeReceitas);
 
-const exibirReceitas = (listaDeReceitas) => {
+/*const exibirReceitas = (listaDeReceitas) => {
     let resultado =[];
     console.log("\n-------------------------------------\n");
     for( let i = 0; i<listaDeReceitas.length; i++){
@@ -61,19 +61,51 @@ const exibirReceitas = (listaDeReceitas) => {
     }
     return resultado.join("\n\n");
     
+};*/
+
+const exibirReceitas = () => {
+    listaDeReceitas.forEach((receita, index) => {
+        console.log("\n-------------------------------------\n");
+        console.log(`Titulo: ${receita.titulo}\nIngredientes:`);
+        receita.ingredientes.forEach((ingrediente) => {console.log(`- ${ingrediente}`)});
+        console.log(`Vegano: ${receita.vegano} `)
+    })
 };
 
-console.log(exibirReceitas(listaDeReceitas));
+//exibirReceitas();
 
 const deletarReceita = (id) =>{
-    if(!listaDeReceitas[id]){
-        console.log("Receita não encontrada");
+    if (listaDeReceitas[id] === -1) {
+        return console.log("Receita não encontrada");
     } else{
     listaDeReceitas.splice(id, 1);
     console.log(`\nItem ${id} removido com sucesso!`);
     }
 };
 
-deletarReceita(1);
+//deletarReceita(1);
 
-console.log(exibirReceitas(listaDeReceitas));
+//console.log(exibirReceitas());
+ const buscarReceita = (termoBuscado) => {
+    return listaDeReceitas.filter((receita) => {
+        return receita.titulo.toLowerCase().indexOf(termoBuscado) != -1; 
+    });
+}
+//console.log(buscarReceita("quent"));
+
+const atualizarReceita = (indice, novoTitulo, novoVegano, novosIngredientes) => {
+    const i = listaDeReceitas.findIndex((receita) => {return receita.id === indice});
+    if (i === -1) {
+        return console.log("Receita não encontrada!");
+      }
+    let receita = listaDeReceitas[i];
+    receita.titulo = novoTitulo;
+    receita.vegano = novoVegano;
+    novosIngredientes.forEach((ingrediente) => {
+        receita.ingredientes.push(ingrediente);
+    });
+};
+atualizarReceita(1, "Cachorro Quente Vegano", true, ["Maionese à gosto", "Ketchup à gosto", "Batata Palha"]);
+
+exibirReceitas();
+
